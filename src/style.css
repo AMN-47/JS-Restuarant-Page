@@ -1,3 +1,38 @@
 body{
+    display: grid;
+    
     background-color: antiquewhite;
+} 
+
+/*Header*/
+header{
+    display: flex;
+    flex-direction: column;
+    border: black solid;
+    align-items: center;
+}
+
+header>h1{
+    border: 2px solid black;
+} 
+
+header nav button{
+    border: 8px red solid;
+}
+
+header button:hover{
+    cursor: pointer;
+}
+
+/*Main*/
+
+#content{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+} 
+
+#content-h1{
+    justify-self: center;
 }
