@@ -1,3 +1,5 @@
+import { initialPageLoad } from './initial-page-loads.js';
+
 import './style.css' 
 
 /*
@@ -7,6 +9,6 @@ import './style.css'
 4. Use JS to make them
 */ 
 
-
+document.addEventListener("DOMContentLoaded", initialPageLoad);
 
 console.log("Hello World");
