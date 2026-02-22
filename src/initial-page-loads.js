@@ -25,4 +25,35 @@ export function initialPageLoad() {
 
     nav.appendChild(logo);
     nav.appendChild(navLinks);
+
+    //Hero Section
+    const hero = document.createElement("div");
+    hero.classList.add("hero");
+
+    const heroImage = document.createElement("img");
+    heroImage.classList.add("hero-image");
+    heroImage.src = wineImage;
+    heroImage.alt = "Restuaraunt Hero Image"; 
+
+    const heroOverlay = document.createElement("div");
+    heroOverlay.classList.add("hero-overlay");
+
+    const heroTitle = document.createElement("h1");
+    heroTitle.classList.add("hero-title")
+    heroTitle.textContent = "The Fine Diners"
+
+    const heroSubtitle = document.createElement("p");
+    heroSubtitle.classList.add("hero-subtitle");
+    heroSubtitle.textContent = "Fine Fining Redefined"
+
+    const heroBtn = document.createElement("button");
+    heroBtn.classList.add("hero-btn");
+    heroBtn.textContent = "Explore our Menu";
+
+    heroOverlay.appendChild(heroTitle);
+    heroOverlay.appendChild(heroSubtitle);
+    heroOverlay.appendChild(heroBtn);
+    hero.appendChild(heroImage);
+    hero.appendChild(heroOverlay);
+    contentDiv.appendChild(hero);
 }
