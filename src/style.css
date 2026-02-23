@@ -149,4 +149,72 @@ nav {
 
 .hero-title{
     font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.15rem;
+    line-height: 1;
+    animation: fadeUp 1.2s ease 0.3s both;
+}
+
+.hero-subtitle {
+    font-size: clamp(0.7rem, 15.vw, 0.85rem);
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 0.45rem;
+    text-transform: uppercase;
+    animation: adeUp 1.2s ease 0.6s both;
+} 
+
+.hero-btn {
+  margin-top: 0.8rem;
+  padding: 1rem 3rem;
+  background-color: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color var(--transition);
+  animation: fadeUp 1.2s ease 0.9s both;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--gold);
+  transform: translateX(-101%);
+  transition: transform var(--transition);
+  z-index: 0;
+}
+
+.hero-btn:hover {
+  color: var(--dark);
+}
+
+.hero-btn:hover::before {
+  transform: translateX(0);
+}
+
+.hero-btn span,
+.hero-btn {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
