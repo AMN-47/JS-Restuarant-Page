@@ -7,3 +7,25 @@
   box-sizing: border-box;
 }
 
+:root {
+    --gold: #c9a96e;
+  --gold-light: #e8d5b0;
+  --dark: #0f0f0f;
+  --dark-2: #1a1a1a;
+  --dark-3: #2c2c2c;
+  --cream: #faf8f5;
+  --cream-2: #f0e6d3;
+  --gray: #888;
+  --transition: 0.35s ease;
+} 
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat' sans-serif;
+    background-color: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+}
