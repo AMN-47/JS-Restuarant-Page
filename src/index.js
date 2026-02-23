@@ -9,6 +9,12 @@ import './style.css'
 4. Use JS to make them
 */ 
 
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+
 document.addEventListener("DOMContentLoaded", initialPageLoad);
 
-console.log("Hello World");
+console.log("Hello World"); 
