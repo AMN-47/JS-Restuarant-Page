@@ -72,4 +72,39 @@ export function initialPageLoad() {
     infoSection.appendChild(infoHeading);
     infoSection.appendChild(infoText);
     contentDiv.appendChild(infoSection);
+
+    //Highlights section
+    const highlights = document.createElement("section");
+    highlights.classList.add("highlights"); 
+
+    const highlightData = [
+    { icon: "🍷", title: "Curated Wine List", desc: "Over 200 selections from the world's finest vineyards." },
+    { icon: "🍽️", title: "Seasonal Menu", desc: "Our menu changes with the seasons to bring you the freshest flavors." },
+    { icon: "🎶", title: "Live Music", desc: "Enjoy live jazz every Friday and Saturday evening." },];
+
+    highlightData.forEach(({icon, title, desc}) => {
+        const card = document.createElement("div");
+        card.classList.add("highlight-card");
+        
+        const cardIcon = document.createElement("span");
+        cardIcon.classList.add("highlight-icon");
+        cardIcon.textContent = icon;
+
+        const cardTitle = document.createElement("h3");
+        cardTitle.classList.add("highlight-title");
+        cardTitle.textConenet = title;
+
+        const cardDesc = document.createElement("p");
+        cardDesc.classList.add("highlight-desc");
+        cardDesc.textContent = desc;
+
+        card.appendChild(cardIcon);
+        card.appendChild(cardTitle);
+        card.appendChild(cardDesc);
+        highlights.appendChild(card);
+
+    });
+
+    contentDiv.appendChild(highlights)
+
 }
