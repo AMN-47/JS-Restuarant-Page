@@ -55,5 +55,21 @@ export function initialPageLoad() {
     heroOverlay.appendChild(heroBtn);
     hero.appendChild(heroImage);
     hero.appendChild(heroOverlay);
-    contentDiv.appendChild(hero);
+    contentDiv.appendChild(hero); 
+
+    //Code for info section
+    const infoSection = document.createElement("section");
+    infoSection.classList.add("info-selection");
+
+    const infoHeading = document.createElement("h2");
+    infoHeading.classList.add("info-heading");
+    infoHeading.textContent = "Welcome to the finediner";
+
+    const infoText = document.createElement("p");
+    infoText.classList.add("info-text");
+    infoText.textContent = "In the heart of the city, FineDiners offfers a unparalleded dining experience";
+
+    infoSection.appendChild(infoHeading);
+    infoSection.appendChild(infoText);
+    contentDiv.appendChild(infoSection);
 }
