@@ -105,6 +105,16 @@ export function initialPageLoad() {
 
     });
 
-    contentDiv.appendChild(highlights)
+    contentDiv.appendChild(highlights);
 
+    //Design for footer
+    const footer = document.createElement("footer");
+    footer.classList.add("footer");
+
+    const footerText = document.createElement("p");
+    footerText.classList.add("footer-text");
+    footerText.textContent = "© 2024 The Abyss | Business Casual Attire Required | 123 Fine St, New York, NY";
+
+    footer.appendChild(footerText);
+    contentDiv.appendChild(footer);
 }
