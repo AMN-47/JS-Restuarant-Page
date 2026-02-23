@@ -28,4 +28,22 @@ body {
     background-color: var(--cream);
     color: var(--dark);
     overflow-x: hidden;
+} 
+
+/*Header Styling*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+header.scrolled{
+    background-color: rgba(15, 15, 15, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
 }
