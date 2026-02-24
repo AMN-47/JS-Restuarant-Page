@@ -18,7 +18,8 @@ export function initialPageLoad() {
         const li = document.createElement("li");
         const a = document.createElement("a");
         a.textContent = linkText;
-        a.classList.add("nav-link")
+        a.href = "#";
+        a.classList.add("nav-link");
         li.appendChild(a);
         navLinks.appendChild(li);
     });
@@ -92,7 +93,7 @@ export function initialPageLoad() {
 
         const cardTitle = document.createElement("h3");
         cardTitle.classList.add("highlight-title");
-        cardTitle.textConenet = title;
+        cardTitle.textContent = title;
 
         const cardDesc = document.createElement("p");
         cardDesc.classList.add("highlight-desc");
