@@ -74,6 +74,8 @@ export function menuPageLoad() {
 
         section.appendChild(categoryHeading);
         section.appendChild(divider);
+
+        
     })
 
 
