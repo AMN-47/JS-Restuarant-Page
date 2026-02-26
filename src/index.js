@@ -11,12 +11,59 @@ import './style.css'
 4. Use JS to make them
 */ 
 
+
+import logoImage from "./Images/Logo.svg";
+
+import "./style.css";
+
+/* ================================
+   CREATE STATIC LAYOUT (HEADER/NAV)
+================================ */
+
+function createLayout() {
+  const header = document.createElement("header");
+  const nav = document.createElement("nav");
+
+  // Logo
+  const logo = document.createElement("img");
+  logo.classList.add("nav-logo");
+  logo.src = logoImage;
+  logo.alt = "Restaurant Logo";
+
+  // Nav links
+  const navLinks = document.createElement("ul");
+  navLinks.classList.add("nav-links");
+
+  ["Home", "Menu", "Contact"].forEach((linkText) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.textContent = linkText;
+    a.classList.add("nav-link");
+    a.dataset.page = linkText.toLowerCase(); // important
+
+    li.appendChild(a);
+    navLinks.appendChild(li);
+  });
+
+  nav.appendChild(logo);
+  nav.appendChild(navLinks);
+  header.appendChild(nav);
+
+  document.body.prepend(header);
+}
+
+/* ================================
+   PAGE NAVIGATION
+================================ */
+
 function clearContent() {
   document.querySelector("#content").innerHTML = "";
 }
 
 function navigate(page) {
   clearContent();
+
   if (page === "home") initialPageLoad();
   else if (page === "menu") menuPageLoad();
   else if (page === "contact") contactPageLoad();
@@ -31,11 +78,21 @@ function bindNavLinks() {
   });
 }
 
+/* ================================
+   SCROLL EFFECT
+================================ */
+
 window.addEventListener("scroll", () => {
-  document.querySelector("header").classList.toggle("scrolled", window.scrollY > 50);
+  const header = document.querySelector("header");
+  header.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-initialPageLoad();
-bindNavLinks();
+/* ================================
+   INITIAL LOAD
+================================ */
 
-console.log("Hello World"); 
+createLayout();        // build header/nav once
+initialPageLoad();     // load Home content
+bindNavLinks();        // attach listeners
+
+console.log("App Loaded");

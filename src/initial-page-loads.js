@@ -3,29 +3,8 @@ import logoImage from "./Images/Logo.svg"
 
 export function initialPageLoad() {
     const contentDiv = document.querySelector("#content");
-    const nav = document.querySelector("nav");
-
-    //Code for NavBar
-    const logo = document.createElement("img");
-    logo.classList.add("nav-logo");
-    logo.src = logoImage;
-    logo.alt = "Restuarant Logo";
-
-    const navLinks = document.createElement("ul");
-    navLinks.classList.add("nav-links");
+    contentDiv.innerHTML = "";
     
-    ["Home", "Menu", "Contact"].forEach((linkText) =>{
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.textContent = linkText;
-        a.href = "#";
-        a.classList.add("nav-link");
-        li.appendChild(a);
-        navLinks.appendChild(li);
-    });
-
-    nav.appendChild(logo);
-    nav.appendChild(navLinks);
 
     //Hero Section
     const hero = document.createElement("div");
