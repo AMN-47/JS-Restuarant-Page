@@ -314,4 +314,295 @@ nav {
   .hero-btn {
     padding: 0.85rem 2rem;
   }
+} 
+
+/* ── Page Header (shared between Menu & Contact) ── */
+.page-header {
+  padding: 12rem 2rem 5rem;
+  text-align: center;
+  background-color: var(--dark);
+  position: relative;
+}
+
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.12em;
+  animation: fadeUp 1s ease both;
+}
+
+.page-title-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--gold);
+  margin: 1.5rem auto 1.2rem;
+}
+
+.page-subtitle {
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 400;
+  animation: fadeUp 1s ease 0.2s both;
+}
+
+/* ════════════════════════════════════════
+   MENU PAGE
+════════════════════════════════════════ */
+
+.menu-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.menu-section {
+  margin-bottom: 5rem;
+}
+
+.menu-category {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--dark);
+  letter-spacing: 0.08em;
+}
+
+.menu-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  margin: 1rem 0 2rem;
+}
+
+.menu-item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid #eee;
+  transition: padding-left var(--transition);
+}
+
+.menu-item:hover {
+  padding-left: 0.5rem;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+  letter-spacing: 0.03em;
+}
+
+.menu-item-price {
+  font-size: 0.95rem;
+  color: var(--gold);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu-item-desc {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ════════════════════════════════════════
+   CONTACT PAGE
+════════════════════════════════════════ */
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  gap: 6rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.info-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 0.92rem;
+  color: var(--gray);
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+/* ── Reservation Form ── */
+.contact-form-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.form-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--dark);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.field-input {
+  padding: 0.9rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  color: var(--dark);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.12);
+}
+
+.field-input::placeholder {
+  color: #bbb;
+  font-weight: 300;
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.submit-btn {
+  margin-top: 0.6rem;
+  padding: 1.1rem;
+  background-color: var(--dark);
+  color: var(--cream-2);
+  border: 1px solid var(--dark);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--gold);
+  transform: translateX(-101%);
+  transition: transform var(--transition);
+  z-index: 0;
+}
+
+.submit-btn:hover:not(:disabled)::before {
+  transform: translateX(0);
+}
+
+.submit-btn:hover:not(:disabled) {
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+.submit-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.submit-btn.submitted {
+  background-color: transparent;
+  border-color: var(--gold);
+  color: var(--gold);
+  cursor: default;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 10rem 1.5rem 4rem;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding: 4rem 1.5rem;
+  }
+
+  .menu-wrapper {
+    padding: 4rem 1.5rem;
+  }
+
+  .menu-item-header {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-category {
+    font-size: 1.6rem;
+  }
+
+  .form-heading {
+    font-size: 1.5rem;
+  }
+
+  .contact-wrapper {
+    padding: 3rem 1.2rem;
+  }
 }
