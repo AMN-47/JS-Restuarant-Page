@@ -1,4 +1,6 @@
 import { initialPageLoad } from './initial-page-loads.js';
+import { menuPageLoad } from './menupage.js';
+import { contactPageLoad } from './contactPage.js';
 
 import './style.css' 
 
@@ -9,12 +11,31 @@ import './style.css'
 4. Use JS to make them
 */ 
 
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    header.classList.toggle('scrolled', window.scrollY > 50);
+function clearContent() {
+  document.querySelector("#content").innerHTML = "";
+}
+
+function navigate(page) {
+  clearContent();
+  if (page === "home") initialPageLoad();
+  else if (page === "menu") menuPageLoad();
+  else if (page === "contact") contactPageLoad();
+}
+
+function bindNavLinks() {
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      navigate(link.dataset.page);
+    });
   });
+}
 
+window.addEventListener("scroll", () => {
+  document.querySelector("header").classList.toggle("scrolled", window.scrollY > 50);
+});
 
-document.addEventListener("DOMContentLoaded", initialPageLoad);
+initialPageLoad();
+bindNavLinks();
 
 console.log("Hello World"); 
