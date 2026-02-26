@@ -75,8 +75,33 @@ export function menuPageLoad() {
         section.appendChild(categoryHeading);
         section.appendChild(divider);
 
-        
+        items.forEach(({name, desc, price}) => {
+          const item = document.createElement("div");
+          item.classList.add("menu-item");
+
+          const itemHeader = document.createElement("div");
+          itemHeader.classList.add("menu-item-header");
+
+          const itemName = document.createElement("h3");
+          itemName.classList.add("menu-item-name");
+          itemName.textContent = name;
+
+          const itemPrice = document.createElement("span");
+          itemPrice.classList.add("menu-item-price");
+          itemPrice.textContent = price;
+          
+          const itemDesc = document.createElement("p");
+          itemDesc.classList.add("menu-item-desc");
+          itemDesc.textContent = desc;
+
+          itemHeader.appendChild(itemName);
+          itemHeader.appendChild(itemPrice);
+          item.appendChild(itemHeader);
+          item.appendChild(itemDesc);
+          section.appendChild(item);
+        });
+
+        menuWrapper.appendChild(section);
     })
-
-
+    contentDiv.appendChild(menuWrapper);
 }
